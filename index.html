@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Server CRUD</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        s { color: red; } /* Gạch ngang màu đỏ cho dễ nhìn */
+    </style>
+</head>
+<body>
+    <h2>Posts Management</h2>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>TITLE</th><th>VIEWS</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="body_table"></tbody>
+    </table>
+    <div>
+        <input type="text" id="id_txt" placeholder="ID (auto if blank)" readonly style="background:#eee"/>
+        <input type="text" id="title_txt" placeholder="Title"/>
+        <input type="number" id="view_txt" placeholder="Views"/>
+        <input type="submit" value="Save Post" onclick="Save()">
+    </div>
+
+    <hr />
+
+    <h3>Comments Management</h3>
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Text</th><th>Post ID</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="body_comments"></tbody>
+    </table>
+    <div>
+        <input type="text" id="comment_id_txt" placeholder="ID (auto if blank)" readonly style="background:#eee"/>
+        <input type="text" id="comment_text_txt" placeholder="Comment text" />
+        <input type="text" id="comment_postId_txt" placeholder="Post ID" />
+        <input type="submit" value="Save Comment" onclick="SaveComment()" />
+    </div>
+
+    <!-- CHÈN SCRIPT Ở CUỐI BODY -->
+    <script src="main.js"></script>
+</body>
+</html>
